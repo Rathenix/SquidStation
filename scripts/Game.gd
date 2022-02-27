@@ -37,7 +37,6 @@ func _process(delta):
 			Game.open_menu()
 
 func open_menu():
-
 	menu = menu_preload.instance()
 	get_tree().get_current_scene().add_child(menu)
 	get_tree().paused = true

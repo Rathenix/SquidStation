@@ -1,7 +1,6 @@
 extends Area2D
 
-export var speed = 200
-
+var speed = 200
 var vel = Vector2()
 
 onready var sprite = get_node("sprite")

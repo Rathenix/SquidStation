@@ -11,6 +11,7 @@ func _ready():
 
 func _on_back_button_pressed():
 	Game.close_menu()
+	get_tree().change_scene(Game.Screens.title_screen)
 
 func _on_mute_checkbox_pressed():
 	Game.Options.mute = mute_checkbox.pressed

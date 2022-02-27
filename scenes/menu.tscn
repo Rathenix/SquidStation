@@ -53,12 +53,12 @@ rect_scale = Vector2( 1.5, 1.5 )
 text = "Mute"
 
 [node name="back_button" type="Button" parent="."]
-margin_left = 552.0
-margin_top = 466.0
-margin_right = 594.0
-margin_bottom = 486.0
+margin_left = 531.0
+margin_top = 469.0
+margin_right = 614.0
+margin_bottom = 489.0
 rect_scale = Vector2( 2, 2 )
-text = "Back"
+text = "Main Menu"
 
 [connection signal="value_changed" from="music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="sfx_slider" to="." method="_on_sfx_slider_value_changed"]

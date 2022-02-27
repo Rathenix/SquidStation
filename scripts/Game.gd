@@ -26,7 +26,18 @@ var Options = {
 var menu_preload = preload("res://scenes/menu.tscn")
 var menu
 
+func _ready():
+	set_pause_mode(Node.PAUSE_MODE_PROCESS)
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_pause"):
+		if get_tree().paused:
+			Game.close_menu()
+		else:
+			Game.open_menu()
+
 func open_menu():
+
 	menu = menu_preload.instance()
 	get_tree().get_current_scene().add_child(menu)
 	get_tree().paused = true

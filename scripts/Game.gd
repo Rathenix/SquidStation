@@ -25,6 +25,7 @@ var Options = {
 
 var menu_preload = preload("res://scenes/menu.tscn")
 var menu
+var Game_Timer = 10.0
 
 func _ready():
 	set_pause_mode(Node.PAUSE_MODE_PROCESS)
@@ -44,3 +45,9 @@ func open_menu():
 func close_menu():
 	menu.queue_free()
 	get_tree().paused = false
+
+func set_timer(current_game_time):
+	Game_Timer = current_game_time
+
+func game_over():
+	pass

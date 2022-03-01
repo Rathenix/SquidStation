@@ -1,10 +1,10 @@
 extends Node
 
 var Player = {
-	"current_hp": 0,
-	"max_hp": 0,
-	"move_speed": 0,
-	"attack_rate": 0,
+	"current_hp": 10,
+	"max_hp": 10,
+	"move_speed": 1,
+	"attack_rate": 1,
 	"attacks": [],
 	"score": 0,
 	"level_path": [],
@@ -14,7 +14,7 @@ var Screens = {
 	"title_screen": "res://scenes/title_screen.tscn",
 	"menu": "res://scenes/menu.tscn",
 	"level1": "res://scenes/level1.tscn",
-	"level2": "path/to/scene.tscn",
+	"test_level": "res://scenes/infinite_level.tscn",
 }
 
 var Options = {

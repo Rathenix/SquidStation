@@ -1,11 +1,21 @@
 extends Area2D
 
-var speed = 200
+var current_hp = Game.Player.current_hp
+var max_hp = Game.Player.max_hp
+var move_speed = Game.Player.move_speed
+var attack_rate = Game.Player.attack_rate
+var attacks = Game.Player.attacks
+
+var speed = 200 * move_speed
 var vel = Vector2()
 
-onready var sprite = get_node("sprite")
+onready var sprite = $sprite
+onready var hp_bar = $hp_bar
+onready var hp_tween = $hp_bar/hp_tween
 
 func _ready():
+	hp_bar.max_value = max_hp
+	hp_bar.value = current_hp
 	set_physics_process(true)
 
 func _physics_process(delta):
@@ -32,3 +42,16 @@ func _physics_process(delta):
 		sprite.set_animation("idle")
 		sprite.set_frame(0)
 		sprite._set_playing(false)
+
+func modify_hp(hp_amount):
+	current_hp = clamp(current_hp + hp_amount, 0, max_hp)
+	hp_bar.value = current_hp
+
+func _on_player_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	print(str("enemy? ", body.is_in_group("enemy")))
+	if body.is_in_group("enemy"):
+		body.touching_player = true
+
+func _on_player_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("enemy"):
+		body.touching_player = false

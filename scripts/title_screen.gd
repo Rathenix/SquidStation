@@ -4,7 +4,7 @@ func _on_start_button_pressed():
 	get_tree().change_scene(Game.Screens.level1)
 
 func _on_high_scores_button_pressed():
-	get_tree().change_scene(Game.Screens.high_scores)
+	get_tree().change_scene(Game.Screens.test_level)
 
 func _on_options_button_pressed():
 	Game.open_menu()

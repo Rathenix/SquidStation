@@ -5,9 +5,13 @@ var Player = {
 	"max_hp": 10,
 	"move_speed": 1,
 	"attack_rate": 1,
-	"attacks": [],
+	"attacks": ["single_shot"],
 	"score": 0,
 	"level_path": [],
+}
+
+var attacks = {
+	"single_shot": preload("res://scenes/single_shot_attack.tscn"),
 }
 
 var Screens = {

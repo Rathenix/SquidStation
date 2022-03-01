@@ -11,11 +11,15 @@ var vel = Vector2()
 
 onready var sprite = $sprite
 onready var hp_bar = $hp_bar
-onready var hp_tween = $hp_bar/hp_tween
+onready var flash_timer = $flash_timer
 
 func _ready():
 	hp_bar.max_value = max_hp
 	hp_bar.value = current_hp
+	flash_timer.wait_time = 0.1
+	for attack in attacks:
+		var atk = Game.attacks[attack].instance()
+		add_child(atk)
 	set_physics_process(true)
 
 func _physics_process(delta):
@@ -44,14 +48,25 @@ func _physics_process(delta):
 		sprite._set_playing(false)
 
 func modify_hp(hp_amount):
+	if hp_amount > 0:
+		flash(Color.green)
+	elif hp_amount < 0:
+		flash(Color.red)
 	current_hp = clamp(current_hp + hp_amount, 0, max_hp)
 	hp_bar.value = current_hp
+	
+func flash(color):
+	sprite.material.set_shader_param("flash_color", color)
+	sprite.material.set_shader_param("flash_modifier", 0.5)
+	flash_timer.start()
 
 func _on_player_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	print(str("enemy? ", body.is_in_group("enemy")))
 	if body.is_in_group("enemy"):
 		body.touching_player = true
 
 func _on_player_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
-	if body.is_in_group("enemy"):
+	if body and body.is_in_group("enemy"):
 		body.touching_player = false
+
+func _on_flash_timer_timeout():
+	sprite.material.set_shader_param("flash_modifier", 0.0)

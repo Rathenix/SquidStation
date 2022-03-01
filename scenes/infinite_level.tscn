@@ -12,4 +12,25 @@
 position = Vector2( 300, 300 )
 
 [node name="squid_1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 643, 97 )
+position = Vector2( 212, -16 )
+
+[node name="squid_2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 819, 170 )
+
+[node name="squid_3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 482, 601 )
+
+[node name="squid_4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 805, 445 )
+
+[node name="squid_5" parent="." instance=ExtResource( 3 )]
+position = Vector2( -11, 398 )
+
+[node name="squid_6" parent="." instance=ExtResource( 3 )]
+position = Vector2( -9, 101 )
+
+[node name="squid_7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 703, -64 )
+
+[node name="squid_8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 95, 600 )

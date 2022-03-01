@@ -8,10 +8,10 @@ pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_offset = Vector2( 1000, 0 )
+scroll_offset = Vector2( 1000, 500 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 1024, 0 )
+motion_mirroring = Vector2( 1024, 600 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 2 )

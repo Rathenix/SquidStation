@@ -4,19 +4,19 @@ var vel = Vector2()
 var level = 1
 var stats = {
 	1: {
-		'speed': 200, 
+		'speed': 300, 
 		'attack_range': 600, 
 		'damage_amount': 1, 
 		'attack_tick': 1
 	},
 	2:{
-		'speed': 200, 
+		'speed': 300, 
 		'attack_range': 600, 
 		'damage_amount': 1, 
 		'attack_tick': 1,
 	},
 	3:{
-		'speed': 200, 
+		'speed': 300, 
 		'attack_range': 600, 
 		'damage_amount': 1, 
 		'attack_tick': 1,

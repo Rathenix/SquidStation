@@ -53,6 +53,7 @@ material = SubResource( 9 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "idle"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -89,4 +90,5 @@ one_shot = true
 
 [connection signal="body_shape_entered" from="." to="." method="_on_player_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_player_body_shape_exited"]
+[connection signal="value_changed" from="hp_bar" to="." method="_on_hp_bar_value_changed"]
 [connection signal="timeout" from="flash_timer" to="." method="_on_flash_timer_timeout"]

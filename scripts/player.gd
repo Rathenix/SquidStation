@@ -71,3 +71,8 @@ func _on_player_body_shape_exited(body_rid, body, body_shape_index, local_shape_
 
 func _on_flash_timer_timeout():
 	sprite.material.set_shader_param("flash_modifier", 0.0)
+
+
+func _on_hp_bar_value_changed(value):
+	if value <= 0:
+		Game.game_over()

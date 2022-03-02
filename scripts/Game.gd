@@ -30,8 +30,10 @@ var Options = {
 	"mute": false,
 }
 
-var menu_preload = preload("res://scenes/menu.tscn")
+var options_menu_preload = preload("res://scenes/options_menu.tscn")
+var title_menu_preload = preload('res://scenes/title_menu.tscn')
 var menu
+var Game_Over = false
 var Game_Timer = 10.0
 
 func _ready():
@@ -39,15 +41,16 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_pause"):
-		if get_tree().paused:
+		if get_tree().paused and not Game_Over:
 			Game.close_menu()
 		else:
 			Game.open_menu()
+			
 
 func open_menu():
-	menu = menu_preload.instance()
+	menu = options_menu_preload.instance()
 	if get_tree().get_current_scene().name == 'title_screen':
-		var title_menu = get_tree().get_current_scene().get_node('menu')
+		var title_menu = get_tree().get_current_scene().get_node('main_menu')
 		menu.position = title_menu.position
 	else:
 		var player = get_tree().get_current_scene().get_node('player')
@@ -63,4 +66,12 @@ func set_timer(current_game_time):
 	Game_Timer = current_game_time
 
 func game_over():
-	pass
+	Game_Over = true
+	menu = title_menu_preload.instance()
+	var player = get_tree().get_current_scene().get_node('player')
+	menu.position = player.position
+	get_tree().get_current_scene().add_child(menu)
+	get_tree().paused = true
+
+func game_restart():
+	Game_Over = false

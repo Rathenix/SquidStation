@@ -18,7 +18,8 @@ func _ready():
 	hp_bar.value = current_hp
 	flash_timer.wait_time = 0.1
 	for attack in attacks:
-		var atk = Game.attacks[attack].instance()
+		var atk = attack.attack.scene.instance()
+		atk.level = attack.level
 		add_child(atk)
 	set_physics_process(true)
 

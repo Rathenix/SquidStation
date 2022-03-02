@@ -8,55 +8,54 @@ pause_mode = 2
 script = ExtResource( 2 )
 
 [node name="menu" type="Sprite" parent="."]
-position = Vector2( 524, 300 )
 scale = Vector2( 0.65, 0.65 )
 texture = ExtResource( 1 )
 
 [node name="sfx_text" type="RichTextLabel" parent="."]
-margin_left = 460.0
-margin_top = 341.0
-margin_right = 557.0
-margin_bottom = 381.0
+margin_left = -66.0001
+margin_top = 38.0
+margin_right = 30.9999
+margin_bottom = 78.0
 rect_scale = Vector2( 1.5, 1.5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 text = "Effects Volume"
 
 [node name="music_text" type="RichTextLabel" parent="."]
-margin_left = 458.0
-margin_top = 227.0
-margin_right = 555.0
-margin_bottom = 267.0
+margin_left = -68.0001
+margin_top = -76.0
+margin_right = 28.9999
+margin_bottom = -36.0
 rect_scale = Vector2( 1.5, 1.5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 text = "Music Volume"
 
 [node name="music_slider" type="HSlider" parent="."]
-margin_left = 423.0
-margin_top = 250.0
-margin_right = 527.0
-margin_bottom = 266.0
+margin_left = -103.0
+margin_top = -53.0
+margin_right = 0.999939
+margin_bottom = -37.0
 rect_scale = Vector2( 2, 2 )
 
 [node name="sfx_slider" type="HSlider" parent="."]
-margin_left = 424.0
-margin_top = 367.0
-margin_right = 528.0
-margin_bottom = 383.0
+margin_left = -102.0
+margin_top = 64.0
+margin_right = 1.99994
+margin_bottom = 80.0
 rect_scale = Vector2( 2, 2 )
 
 [node name="mute_checkbox" type="CheckBox" parent="."]
-margin_left = 418.0
-margin_top = 469.0
-margin_right = 479.0
-margin_bottom = 493.0
+margin_left = -108.0
+margin_top = 167.0
+margin_right = -47.0001
+margin_bottom = 191.0
 rect_scale = Vector2( 1.5, 1.5 )
 text = "Mute"
 
 [node name="back_button" type="Button" parent="."]
-margin_left = 531.0
-margin_top = 469.0
-margin_right = 614.0
-margin_bottom = 489.0
+margin_left = 4.99994
+margin_top = 166.0
+margin_right = 87.9999
+margin_bottom = 186.0
 rect_scale = Vector2( 2, 2 )
 text = "Main Menu"
 

@@ -1,17 +1,20 @@
 extends Node
 
+var attacks = {
+	"single_shot": {
+		"scene": preload("res://scenes/single_shot_attack.tscn"),
+		"name": 'Single Shot',
+	}
+}
+
 var Player = {
 	"current_hp": 10,
 	"max_hp": 10,
 	"move_speed": 1,
 	"attack_rate": 1,
-	"attacks": ["single_shot"],
+	"attacks": [{'attack': attacks.single_shot, 'level': 1}],
 	"score": 0,
 	"level_path": [],
-}
-
-var attacks = {
-	"single_shot": preload("res://scenes/single_shot_attack.tscn"),
 }
 
 var Screens = {
@@ -43,6 +46,12 @@ func _process(delta):
 
 func open_menu():
 	menu = menu_preload.instance()
+	if get_tree().get_current_scene().name == 'title_screen':
+		var title_menu = get_tree().get_current_scene().get_node('menu')
+		menu.position = title_menu.position
+	else:
+		var player = get_tree().get_current_scene().get_node('player')
+		menu.position = player.position
 	get_tree().get_current_scene().add_child(menu)
 	get_tree().paused = true
 

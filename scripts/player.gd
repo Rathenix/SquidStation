@@ -32,21 +32,21 @@ func _physics_process(delta):
 	set_position(pos)
 	if vel == Vector2(0, 0):
 		sprite.set_animation("idle")
-		sprite._set_playing(true) 
+		sprite.set_playing(true) 
 	elif vel.x > 0:
 		sprite.set_animation("idle")
 		sprite.set_frame(1)
 		sprite.set_flip_h(false)
-		sprite._set_playing(false)
+		sprite.set_playing(false)
 	elif vel.x < 0:
 		sprite.set_animation("idle")
 		sprite.set_frame(1)
 		sprite.set_flip_h(true)
-		sprite._set_playing(false)
+		sprite.set_playing(false)
 	elif vel.y != 0:
 		sprite.set_animation("idle")
 		sprite.set_frame(0)
-		sprite._set_playing(false)
+		sprite.set_playing(false)
 
 func modify_hp(hp_amount):
 	if hp_amount > 0:
